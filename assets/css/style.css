@@ -1,29 +1,25 @@
+
+
 #heading {
-	background-color: #EA526F;
-	display: inline-block;
+	color: red;
+	text-align: center;
+	font-weight: bold;
 }
 
 #instructions {
-	background-color: #D7AF70;
-	
+	color: blue;
+	font-style: italic;
 }
 
-#randomNumber {
-	background-color: #937D64;
-	
+img {
+	width: 50px;
+	height: 50px;
 }
 
-#counters {
-	background-color: #E76B74;
-	
-}
-
-#crystals {
-	background-color: #D7AF70;
-	
-}
-
-#scores {
-	background-color: #EA526F;
-	
+#targetNumber {
+	background-color: pink;
+	text-align: center;
+	padding-top: 40px;
+	width: 100px;
+	height: 100px;
 }
