@@ -1,59 +1,48 @@
 
-
-
 //Make the file JQuery ready
 $(document).ready(function() {
 
-//Creating a new variable called the targetNumber- between 19-120 (this is what the user will aim to)
-var targetNumber = Math.floor(Math.random() * 101) + 19;;
-//checking if the targetNumber randomization works:
-console.log(targetNumber);
+// ========================================VARIABLES====================================================================
 
-//Setting the target Number div to match the targetNumber variable. It will chnage the HTML 
+//Creating a new variable called the targetNumber- between 19-120 (this is what the user will aim to)
+var targetNumber = Math.floor(Math.random() * 101) + 19;
+
+//Setting the target Number div to match the targetNumber variable. This will change the HTML 
 $("#targetNumber").text(targetNumber);
 
 //Random value of green crystal between 1 & 12
-var randomGreen = Math.floor(Math.random() * 11) + 1;;
-//checking if greenCrystal 
-console.log(randomGreen);
+var randomGreen = Math.floor(Math.random() * 11) + 1;
 
 //Random value of orange crystal between 1 & 12
-var randomOrange = Math.floor(Math.random() * 11) + 1;;
-//checking if orangeCrystal 
-console.log(randomOrange);
+var randomOrange = Math.floor(Math.random() * 11) + 1;
 
 //Random value of pink crystal between 1 & 12
 var randomPink = Math.floor(Math.random() * 11) + 1;;
-//checking if pinkCrystal 
-console.log(randomPink);
 
 //Random value of yellow crystal between 1 & 12
-var randomYellow = Math.floor(Math.random() * 11) + 1;;
-//checking if yellowCrystal 
-console.log(randomYellow);
+var randomYellow = Math.floor(Math.random() * 11) + 1;
 
-//craeting a variable for number of wins
+//Creating a variable for number of wins
 var wins = 0;
 
-//craeting a variable for number of losses
+//Creating a variable for number of losses
 var losses = 0;
 
-//Creating a counter, this will track the user's total
+//Creating a counter variable, this will track the user's total
 var counter = 0;
 
 
-// Creation of an on-click event that responds to button clicks of the crystal image.
+//=====================================ON-CLICK FUNCTIONS================================================================
+
+
+// Creation of an on-click event that responds to button clicks of the green crystal image.
   $(".green-crystal").on("click", function() {
 
   	//Each time the green crystal is clicked, the counter increases by 1
   	counter += randomGreen;
-
   	//Setting the totalScore div to match the counter variable. It will change the HTML
-	console.log(counter)
-	$("#totalScore").text(counter);
-
-    // Clicking the button triggers an alert message.
-    alert("You clicked a green crystal! " + counter);
+	   console.log(counter)
+	   $("#totalScore").text(counter);
 
     //To determine wins and losses, the following conditions are specified:
     if (counter === targetNumber) {
@@ -63,22 +52,23 @@ var counter = 0;
       //Incrementing the number of wins
       wins++;
       //checking if the number of wins increments
-	  console.log("Number of wins is: " + wins);
-	  //appending to the HTML
-	  $('#wins').text(wins);
-	  toReset();
+	    console.log("Number of wins is: " + wins);
+	    //appending to the HTML
+	    $('#wins').text(wins);
+      //set to Reset
+	    toReset();
     }
     else if (counter > targetNumber) {
-
     	// Then they are alerted with a loss.
       alert("You lose!!");
-      //Incrementing the number of wins
+      //Incrementing the number of losses
       losses++;
-      //checking if the number of wins increments
-	  console.log("Number of losses is: " + losses);
-	  //appending to the HTML
-	  $('#losses').text(losses);
-	  toReset();
+      //checking if the number of losses increments
+	    console.log("Number of losses is: " + losses);
+	    //appending to the HTML
+	    $('#losses').text(losses);
+      //set to Reset
+	    toReset();
 
     }
 
@@ -91,11 +81,8 @@ var counter = 0;
   	counter += randomOrange;
   	
   	//Setting the totalScore div to match the counter variable. It will change the HTML
-	console.log(counter)
-	$("#totalScore").text(counter);
-    
-    // Clicking the button triggers an alert message.
-    alert("You clicked a orange crystal! " + counter);
+	  console.log(counter)
+	  $("#totalScore").text(counter);
 
     //To determine wins and losses, the following conditions are specified:
     if (counter === targetNumber) {
@@ -114,13 +101,13 @@ var counter = 0;
     	
     	// Then they are alerted with a loss.
       alert("You lose!!");
-      //Incrementing the number of wins
+      //Incrementing the number of losses
       losses++;
-      //checking if the number of wins increments
-	  console.log("Number of losses is: " + losses);
-	  //appending to the HTML
-	  $('#losses').text(losses);
-	  toReset();
+      //checking if the number of losses increments
+	    console.log("Number of losses is: " + losses);
+	    //appending to the HTML
+	    $('#losses').text(losses);
+	    toReset();
 	}
   });
 
@@ -131,11 +118,8 @@ var counter = 0;
   	counter += randomPink;
 
     //Setting the totalScore div to match the counter variable. It will change the HTML
-	console.log(counter)
-	$("#totalScore").text(counter);
-
-    // Clicking the button triggers an alert message.
-    alert("You clicked a pink crystal! " + counter);
+	  console.log(counter)
+	  $("#totalScore").text(counter);
 
     //To determine wins and losses, the following conditions are specified:
     if (counter === targetNumber) {
@@ -145,10 +129,10 @@ var counter = 0;
       //Incrementing the number of wins
       wins++;
       //checking if the number of wins increments
-	  console.log("Number of wins is: " + wins);
-	  //appending to the HTML
-	  $('#wins').text(wins);
-	  toReset();
+	    console.log("Number of wins is: " + wins);
+	    //appending to the HTML
+	    $('#wins').text(wins);
+	    toReset();
     }
     else if (counter > targetNumber) {
     	
@@ -157,10 +141,10 @@ var counter = 0;
       //Incrementing the number of wins
       losses++;
       //checking if the number of wins increments
-	  console.log("Number of losses is: " + losses);
-	  //appending to the HTML
-	  $('#losses').text(losses);
-	  toReset();
+	    console.log("Number of losses is: " + losses);
+	    //appending to the HTML
+	    $('#losses').text(losses);
+	    toReset();
 	}
   });
 
@@ -171,11 +155,8 @@ var counter = 0;
   	counter += randomYellow;
 
     //Setting the totalScore div to match the counter variable. It will change the HTML
-	console.log(counter)
-	$("#totalScore").text(counter);
-
-    // Clicking the button triggers an alert message.
-    alert("You clicked a yellow crystal!" + counter);
+	  console.log(counter)
+	  $("#totalScore").text(counter);
 
     //To determine wins and losses, the following conditions are specified:
     if (counter === targetNumber) {
@@ -185,10 +166,10 @@ var counter = 0;
       //Incrementing the number of wins
       wins++;
       //checking if the number of wins increments
-	  console.log("Number of wins is: " + wins);
-	  //appending to the HTML
-	  $('#wins').text(wins);
-	  toReset();
+	    console.log("Number of wins is: " + wins);
+	    //appending to the HTML
+	    $('#wins').text(wins);
+	    toReset();
 
     }
     else if (counter > targetNumber) {
@@ -197,16 +178,19 @@ var counter = 0;
       alert("You lose!!");
       //Incrementing the number of wins
       losses++;
-      //checking if the number of wins increments
-	  console.log("Number of losses is: " + losses);
-	  //appending to the HTML
-	  $('#losses').text(losses);
-	  //resetting the game
-	  toReset();
+      //checking if the number of losses increments
+	    console.log("Number of losses is: " + losses);
+	    //appending to the HTML
+	    $('#losses').text(losses);
+	    //resetting the game
+	    toReset();
 	}
 
   });
 
+  //============================================FUNCTIONS=======================================================
+
+//Function that will reset the game
   function toReset() {
   	counter = 0;
   	$('#totalScore').text(counter);
@@ -214,8 +198,8 @@ var counter = 0;
   	$("#targetNumber").text(targetNumber);
   	randomGreen = Math.floor(Math.random() * 11) + 1;
   	randomOrange = Math.floor(Math.random() * 11) + 1;
-	randomPink = Math.floor(Math.random() * 11) + 1;
-	randomYellow = Math.floor(Math.random() * 11) + 1;
+	  randomPink = Math.floor(Math.random() * 11) + 1;
+	  randomYellow = Math.floor(Math.random() * 11) + 1;
   }
 
 });
